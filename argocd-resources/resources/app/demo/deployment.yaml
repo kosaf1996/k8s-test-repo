@@ -5,7 +5,7 @@ metadata:
     app: nginx-dep
   name: nginx-dep
 spec:
-  replicas: 15
+  replicas: 2
   selector:
     matchLabels:
       app: nginx-dep
