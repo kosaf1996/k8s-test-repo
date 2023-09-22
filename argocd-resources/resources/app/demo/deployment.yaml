@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: nginx-dep
+    app: gmharbor.com/poc/flask:1.0
   name: nginx-dep
 spec:
   replicas: 2
