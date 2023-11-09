@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: flask
-  name: flask
+    app: nginx-dep
+  name: nginx-dep
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: flask
+      app: nginx-dep
   strategy: {}
   template:
     metadata:
       labels:
-        app: flask
+        app: nginx-dep
     spec:
       containers:
-      - image: gmharbor.com/poc/flask:1.0
-        name: flask
+      - image: nginx
+        name: nginx
         ports:
         - containerPort: 80
