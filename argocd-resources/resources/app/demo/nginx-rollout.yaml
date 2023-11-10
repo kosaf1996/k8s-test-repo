@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: nginx-rollout
+spec:
+  replicas: 2
+  revisionHistoryLimit: 5
+  selector:
+    matchLabels:
+      app: nginx-blue-green
+  workloadRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: nginx-blue-green
+  strategy:
+    blueGreen:
+      activeService: nginx-blue-green-svc
+      autoPromotionEnabled: false
+
