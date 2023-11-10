@@ -7,11 +7,11 @@ spec:
   revisionHistoryLimit: 5
   selector:
     matchLabels:
-      app: nginx-blue-green
+      app: nginx
   workloadRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: nginx-blue-green
+    name: nginx
   strategy:
     blueGreen:
       activeService: nginx-blue-green-svc
