@@ -5,7 +5,7 @@ metadata:
   name: rollout-bluegreen-active
 spec:
   selector:
-    app: rollout-bluegreen1
+    app: rollout-bluegreen
   ports:
   - protocol: TCP
     port: 80
@@ -20,7 +20,7 @@ metadata:
   name: rollout-bluegreen-preview
 spec:
   selector:
-    app: rollout-bluegreen2
+    app: rollout-bluegreen
   ports:
   - protocol: TCP
     port: 80
