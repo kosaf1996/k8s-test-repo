@@ -1,36 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rollout-bluegreen1
+  name: rollout-bluegreen
 spec:
   replicas: 10
   selector:
     matchLabels:
-      app: rollout-bluegreen1
+      app: rollout-bluegreen
   template:
     metadata:
       labels:
-        app: rollout-bluegreen1
+        app: rollout-bluegreen
     spec:
       containers:
-      - name: rollout-bluegreen1
-        image: nginx:1.22.1
-
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: rollout-bluegreen2
-spec:
-  replicas: 10
-  selector:
-    matchLabels:
-      app: rollout-bluegreen2
-  template:
-    metadata:
-      labels:
-        app: rollout-bluegreen2
-    spec:
-      containers:
-      - name: rollout-bluegreen2
+      - name: rollout-bluegreen
         image: nginx:1.22.1
